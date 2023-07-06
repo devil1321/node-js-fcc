@@ -1,0 +1,15 @@
+{
+  "name": "node-js-fcc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myApp.js",
+  "scripts": {
+    "start": "node myApp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dominik Stepien",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
