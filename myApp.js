@@ -38,4 +38,13 @@ app.get('/find-many', async(req,res)=>{
     res.json(persons)
 })
 
+app.get('/get-food',(req,res)=>{
+    const searchFood = async(food) =>{
+        const favFood = await Person.findOne({favoruiteFoods:{$in:food}})
+        res.json(favFood)
+    }
+    const food = req.query.food
+    searchFood(food)
+})
+
 app.listen(8000,()=>console.log('Express listening on port 8000'))
