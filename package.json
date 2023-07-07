@@ -4,6 +4,7 @@
   "description": "A project that does something awesome",
   "keywords": [ "descriptive", "related", "words" ,"freecodecamp"],
   "main": "myApp.js",
+  "version":"1.0",
   "scripts": {
     "start": "node myApp.js",
     "test": "echo \"Error: no test specified\" && exit 1"
