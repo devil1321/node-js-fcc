@@ -34,5 +34,10 @@ app.get('/json',(req,res)=>{
     }
 })
 
+app.get("/:word/echo",(req,res)=>{
+    const word = req.params.word
+    res.json({"word":word})
+})
+
 
 app.listen(8000,()=>console.log('Express listening on port 8000'))
