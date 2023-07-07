@@ -2,9 +2,16 @@ const express = require('express')
 const app = express()
 require('dotenv').config()
 
+const middleware = (req,res,next) => {
+    console.log(`${req.method} ${req.path}-${req.ip}`)
+    next()
+}
+
 const path = __dirname + '/views/index.html'
 
 app.use('/public',express.static(__dirname + '/public'))
+
+app.use(middleware)
 
 app.get('/',(req,res)=>{
     res.sendFile(path)
