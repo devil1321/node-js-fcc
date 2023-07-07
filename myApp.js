@@ -1,6 +1,7 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
-require('dotenv').config()
+const bodyParser = require('body-parser')
 
 const middleware = (req,res,next) => {
     console.log(`${req.method} ${req.path}-${req.ip}`)
@@ -11,6 +12,8 @@ const timeMiddleware = (req,res,next) =>{
     req.time = new Date().toString()
     next()
 }
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 const path = __dirname + '/views/index.html'
 
