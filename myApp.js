@@ -15,6 +15,22 @@ app.post('/add-person', (req,res)=>{
         favoruiteFoods:['Apple']
     })
     person.save()
+    res.end()
+})
+
+app.post('/add-persons', (req,res)=>{
+   Person.create([
+    {
+        name:'Dominik',
+        age:29,
+        favoruiteFoods:['Apple']
+    },
+    {
+        name:'Mike',
+        age:39,
+        favoruiteFoods:['Orange']
+    }])
+    res.end()
 })
 
 app.listen(8000,()=>console.log('Express listening on port 8000'))
