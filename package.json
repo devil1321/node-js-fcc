@@ -2,6 +2,7 @@
   "name": "node-js-fcc",
   "version": "1.0.0",
   "description": "A project that does something awesome",
+  "keywords": [ "descriptive", "related", "words" ,"freecodecamp"],
   "main": "myApp.js",
   "scripts": {
     "start": "node myApp.js",
