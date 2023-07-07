@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
 
+const path = __dirname + '/views/index.html'
 
 app.get('/',(req,res)=>{
-    res.send('Hello Express')
+    res.sendFile(path)
 })
 
 
