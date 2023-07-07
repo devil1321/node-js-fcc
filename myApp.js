@@ -47,4 +47,8 @@ app.use('/name',(req,res)=>{
     res.json({...query})
 })
 
+app.post('/name',(req,res)=>{
+    res.json({name:`${req.body.name},${req.body.lastname}`})
+})
+
 app.listen(8000,()=>console.log('Express listening on port 8000'))
