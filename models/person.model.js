@@ -6,4 +6,6 @@ const personSchema = new mongoose.Schema({
     favoruiteFoods:[String]
 })
 
-export const Person = mongoose.model('Person', personSchema)
+const Person = mongoose.model('Person', personSchema)
+
+module.exports = Person
