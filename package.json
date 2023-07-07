@@ -1,7 +1,7 @@
 {
   "name": "node-js-fcc",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project that does something awesome",
   "main": "myApp.js",
   "scripts": {
     "start": "node myApp.js",
