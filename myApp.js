@@ -8,7 +8,7 @@ const middleware = (req,res,next) => {
 }
 
 const timeMiddleware = (req,res,next) =>{
-    req.time = new Date().toString(())
+    req.time = new Date().toString()
     next()
 }
 
@@ -39,5 +39,9 @@ app.get("/:word/echo",(req,res)=>{
     res.json({"word":word})
 })
 
+app.use('/name',(req,res)=>{
+    const query = req.query
+    res.json({...query})
+})
 
 app.listen(8000,()=>console.log('Express listening on port 8000'))
