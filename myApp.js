@@ -9,5 +9,9 @@ app.get('/',(req,res)=>{
     res.sendFile(path)
 })
 
+app.get('/json',(req,res)=>{
+    res.json({"message": "Hello json"})
+})
+
 
 app.listen(8000,()=>console.log('Express listening on port 8000'))
