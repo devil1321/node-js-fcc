@@ -47,4 +47,9 @@ app.get('/get-food',(req,res)=>{
     searchFood(food)
 })
 
+app.get('/find-by-id',async(req,res)=>{
+    const person = await Person.findById('64a7f255af080320512397ec')
+    res.send(person)
+})
+
 app.listen(8000,()=>console.log('Express listening on port 8000'))
