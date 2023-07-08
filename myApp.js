@@ -18,8 +18,8 @@ app.post('/add-person', (req,res)=>{
     res.end()
 })
 
-app.post('/add-persons', (req,res)=>{
-   Person.create([
+app.get('/add-persons', async(req,res)=>{
+   await Person.create([
     {
         name:'Dominik',
         age:29,
@@ -66,6 +66,11 @@ app.get('/find-and-update',async(req,res)=>{
 
 app.get('/find-one-and-delete',async(req,res)=>{
     const person = await Person.findByIdAndRemove("64a7f255af080320512397ec")
+    res.json(await Person.find())
+})
+
+app.get('/remove-all',async(req,res)=>{
+    const person = await Person.deleteMany({name: req.query.name})
     res.json(await Person.find())
 })
 
