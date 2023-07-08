@@ -59,4 +59,9 @@ app.get('/update', async(req,res)=>{
     res.json(await Person.find())
 })
 
+app.get('/find-and-update',async(req,res)=>{
+    const person = await Person.findOneAndUpdate({name: req.query.name},{age:20})
+    res.json(await Person.find())
+})
+
 app.listen(8000,()=>console.log('Express listening on port 8000'))
