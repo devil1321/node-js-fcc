@@ -64,4 +64,9 @@ app.get('/find-and-update',async(req,res)=>{
     res.json(await Person.find())
 })
 
+app.get('/find-one-and-delete',async(req,res)=>{
+    const person = await Person.findByIdAndRemove("64a7f255af080320512397ec")
+    res.json(await Person.find())
+})
+
 app.listen(8000,()=>console.log('Express listening on port 8000'))
