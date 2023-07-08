@@ -74,4 +74,9 @@ app.get('/remove-all',async(req,res)=>{
     res.json(await Person.find())
 })
 
+app.get('/exec',async (req,res)=>{
+    const persons = await Person.find().sort({name:-1}).limit(1).exec().then((p) => p)
+    res.json(persons)
+})
+
 app.listen(8000,()=>console.log('Express listening on port 8000'))
