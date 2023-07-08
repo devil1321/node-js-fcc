@@ -52,4 +52,11 @@ app.get('/find-by-id',async(req,res)=>{
     res.send(person)
 })
 
+app.get('/update', async(req,res)=>{
+    const person = await Person.findById(req.query.id)
+    person.favoruiteFoods.push(req.query.food)
+    person.save()
+    res.json(await Person.find())
+})
+
 app.listen(8000,()=>console.log('Express listening on port 8000'))
